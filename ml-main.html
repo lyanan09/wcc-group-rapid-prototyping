@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <script
+      defer
+      language="javascript"
+      type="text/javascript"
+      src="js/detection.js"
+    ></script>
+    <script
+      defer
+      language="javascript"
+      type="text/javascript"
+      src="js/ml.js"
+    ></script>
+  </head>
+
+  <!-- lips 替换为tattoo的内容 -->
+  <body>
+
+      <!-- phone  -->
+      <!-- 控制摄像头打开 -->
+      <div class="smartphone">
+        <!-- <div class="content"> -->
+          <video id="video"></video>
+        </div>
+   
+       
+        <!-- ----------------------------------- -->
+        <!-- 替换tattoo图片 -->
+        <div id="lips" class="filter">
+          <center>
+            <img class="avatar" src="Assets/lips.png" />
+
+          </center>
+        </div>
+        <!-- ----------------------------------- -->
+      
+  </body>
+</html>
+
+
