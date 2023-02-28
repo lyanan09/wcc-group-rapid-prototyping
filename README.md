@@ -1,1 +1,0 @@
-# wcc-group-rapid-prototyping
