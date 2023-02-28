@@ -1,5 +1,6 @@
 
 let info;
+let infoButton;
 
 function preload(){
   info = loadImage('Assets/info.png');
@@ -47,45 +48,27 @@ class Ball {
     // Display 
     let scale = 1;
     image(info,this.location.x,this.location.y,info.width*scale,info.height*scale);
-
-    // noStroke();
-    // fill(255);
-    // ellipse(this.location.x,this.location.y,48,48);
+    
   }
 }
 
 
-let balls = [];
+
 
 function setup() {
 
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("sketch-container"); //move our canvas inside this HTML element
 
-  newBall(0,0);
-  
+  infoButton = new Ball(0,0);
 }
 
 function draw() {
   background(0);
-  
-  for (let ball of balls) {
-    ball.display();
-  }
- 
+  infoButton.display();
   
 }
 
-// function mousePressed() {
-  // when we press the mouse we create a new instance of the Ball object and add it to the balls array
-  // let b = new Ball(mouseX, mouseY);
-  // balls.push(b);
-// }
-
-function newBall(x, y) {
-  let b = new Ball(x,y);
-  balls.push(b);
-}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
