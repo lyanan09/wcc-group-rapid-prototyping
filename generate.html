@@ -12,23 +12,29 @@
     <header>
         <a href="index.html"><img src="Assets/home.png" alt="" id="home"></a>
     </header>
-    <main>
+    <main id="generate">
         <section class="left">
-
+            <div class="img-container">
+                <div class="canvas"></div>
+                <div class="btn-row">
+                    <button class="btn btn-black">try</button>
+                    <button class="btn btn-black">save</button>
+                </div>
+            </div>
         </section>
         <section class="right">
             <div class="input-wrap">
-                <input type="text" placeholder="DD">
+                <input type="text" placeholder="DD" name="day">
             </div> 
             <div class="input-wrap">
-                <input type="text" placeholder="DD">
+                <input type="text" placeholder="MM" name="month">
             </div>
             <div class="input-wrap">
-                <input type="text" placeholder="DD">
+                <input type="text" placeholder="YY" name="year">
             </div>
             <div class="btn-row">
-                <button>reset</button>
-                <button>submit</button>
+                <button class="btn btn-white">reset</button>
+                <button class="btn btn-white">submit</button>
             </div>
         </section>
 
