@@ -194,3 +194,54 @@ canvas {
   .info-line label {
     color: white;
   }
+
+  /*---------   ml-main styles *--------/
+    /* 展示摄像头获取范围，实际控制展示面部范围 */
+    #video {
+        object-fit: cover;
+        position: absolute;
+        top: 0.1px;
+        /* margin: 16px; */
+        width: 500px;
+        height: 500px;
+        z-index: 2;
+      }
+      
+      #canvas {
+        position: absolute;
+        top: 45px;
+        margin: 16px;
+        width: 500px;
+        height: 500px;
+        z-index: 2;
+      }
+      /* 约束icon大小 */
+      .avatar {
+        border-radius: 20px;
+        border-color: black;
+        margin-top: 14px;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      
+      .filter {
+        box-shadow: 2px 2px 3px rgb(0, 0, 0);
+        margin-top: 5px;
+        vertical-align: middle;
+        /* 圆button大小 */
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgb(0, 0, 0);
+        margin-left: 500px;
+        cursor: pointer;
+      }
+      
+      .scroll {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 85vh;
+      }
+      
