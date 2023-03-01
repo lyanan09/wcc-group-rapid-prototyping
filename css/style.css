@@ -110,7 +110,7 @@ main{
 #generate-main {
     background-image: url(../Assets/bg.jpg);
     display: flex;
-    padding: 0 40px;
+    padding: 0 60px 0 20px;
     box-sizing: border-box;
 }
 
@@ -153,6 +153,7 @@ main{
 
 #home {
     scale: 0.75;
+    margin-top: 40px;
 }
 
 canvas {
@@ -203,15 +204,18 @@ canvas {
     background: none;
     font-size: 36px;
     text-align: center;
+    width: 200px;
     transform: scale(1.3,1);
     -ms-transform: scale(1.3,1);
     -webkit-transform: scale(1.3,1);
+    margin: 10px 0 0 40px;
+    color: #d4d4ed;
+    font-family: Times, serif;
 }
 
 .input-wrap input::placeholder {
     color: #d4d4ed;
-    font-family: 'Times New Roman', Times, serif;
-
+    font-family: Times, serif;
 }
 
 .input-wrap input:focus-visible {
@@ -273,40 +277,111 @@ canvas {
     }
   }
 
-  #info {
+  #info-main {
     display: flex;
     flex-wrap: wrap;
+    background-image: url(../Assets/bg-info.jpg);
+    padding: 120px 10px 50px 10px;
+    box-sizing: border-box;
+  }
+
+  #info-main #home {
+    position: fixed;
   }
 
   .info-item {
     display: flex;
-    flex-basis: calc(100% / 3);
+    width: calc(100% / 3);
     box-sizing: border-box;
-    padding: 20px;
+    padding: 0 50px;
     text-transform: uppercase;
   }
 
   .info-wrapper {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.508);
-    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     height: 0;
-    padding: 30% 0;
+    padding: 35% 0;
+    box-shadow: 0px 12px 14px 2px rgb(0 0 0 / 31%);
   }
 
   .info-item img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 140px;
+    max-height: 140px;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .info-item .text-container {
     width: 60%;
+    padding-right: 10px;
+  }
 
+  .info-line {
+    font-size: 12px;
   }
 
   .info-line label {
     color: white;
   }
+
+  .info-line p {
+    max-width: 100%;
+    word-break: break-all;
+    margin: 0;
+  }
+
+  /*---------   ml-main styles *--------/
+    /* 展示摄像头获取范围，实际控制展示面部范围 */
+    #video {
+        object-fit: cover;
+        position: absolute;
+        top: 0.1px;
+        /* margin: 16px; */
+        width: 500px;
+        height: 500px;
+        z-index: 2;
+      }
+      
+      #canvas {
+        position: absolute;
+        top: 45px;
+        margin: 16px;
+        width: 500px;
+        height: 500px;
+        z-index: 2;
+      }
+      /* 约束icon大小 */
+      .avatar {
+        border-radius: 20px;
+        border-color: black;
+        margin-top: 14px;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      
+      .filter {
+        box-shadow: 2px 2px 3px rgb(0, 0, 0);
+        margin-top: 5px;
+        vertical-align: middle;
+        /* 圆button大小 */
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgb(0, 0, 0);
+        margin-left: 500px;
+        cursor: pointer;
+      }
+      
+      .scroll {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 85vh;
+      }
+      

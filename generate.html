@@ -31,12 +31,23 @@
             <div class="input-wrap">
                 <input type="text" placeholder="YY" name="year">
             </div>
-            <div class="btn-row">
-                <button class="btn btn-white">reset</button>
-                <button class="btn btn-white">submit</button>
+            <div class="btn-row" style="width: 400px; margin: 40px 0 0 60px;">
+                <button class="btn btn-white" id="reset">reset</button>
+                <button class="btn btn-white" id="submit">submit</button>
             </div>
         </section>
 
     </main>
 </body>
+
+
+<script>
+    document.getElementById("reset").onclick = function() {onResetClick()};
+    function onResetClick() {
+        let inputs = document.getElementsByTagName("input");
+        for (const input of inputs) {
+            input.value = '';
+        }
+    }
+</script>
 </html>
