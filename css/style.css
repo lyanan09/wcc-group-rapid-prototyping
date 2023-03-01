@@ -4,8 +4,6 @@
     max-height: 100%;
     margin: auto;
 }
-
-
   /* 展示摄像头获取范围，实际控制展示面部范围 */
   #video {
     object-fit: cover;
