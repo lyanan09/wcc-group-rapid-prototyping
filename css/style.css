@@ -5,10 +5,52 @@
     margin: auto;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-  }
   canvas {
     display: block;
   }
+
+.info-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.info-container img {
+  scale:0.5;
+  animation-name: bounce;
+  animation-duration : 5s;
+  animation-iteration-count:infinite;
+  animation-direction: alternate;
+
+}
+
+
+@keyframes bounce {
+  
+  from{
+      margin-top:0%;
+      margin-left: 0%;
+  }
+  30%{
+      margin-top:0%;
+      margin-left: 100%;
+
+  }
+
+  60%{
+      margin-top:100%;
+      margin-left: 0%;
+
+  }
+
+  80%
+  {
+      margin-top:100%;
+      margin-left: 100%;
+  }
+
+  to{
+      margin-top:0%;
+      margin-left: 0%;
+  }
+}
