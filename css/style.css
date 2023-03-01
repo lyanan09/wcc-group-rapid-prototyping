@@ -18,6 +18,8 @@ main{
     border-radius: 20px;
     width: 80px;
     height: 30px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn.btn-white {
@@ -41,6 +43,10 @@ main{
 
 #home {
     width: 80px;
+}
+
+canvas {
+    display: block;
 }
 
 #generate {
