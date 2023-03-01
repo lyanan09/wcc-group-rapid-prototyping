@@ -5,10 +5,7 @@
     margin: auto;
 }
 
-body {
-    background-color: #ffffff;
-    margin-left: 35%;
-  }
+
   /* 展示摄像头获取范围，实际控制展示面部范围 */
   #video {
     object-fit: cover;
