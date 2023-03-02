@@ -1,0 +1,15 @@
+
+
+information {
+    font-family: 'carbon_blockregular', serif;
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'carbon_blockregular';
+    src: url('../Assets/carbonbl-webfont.woff2') format('woff2'),
+         url('../Assets/carbonbl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
