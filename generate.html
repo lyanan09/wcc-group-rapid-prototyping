@@ -7,29 +7,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/p5.js"></script>
+    <script src="js/tattoo.js"></script>
+
 </head>
 <body>
     <main id="generate-main">
         <a href="index.html"><img src="Assets/home.png" alt="" id="home"></a>
         <section class="left">
             <div class="img-container">
-                <div class="canvas"></div>
+                <div id="canvas-container"></div>
                 <div class="btn-row">
                     <a href="ml-main.html" class="btn btn-black">try</a>
-                    <a href="tattoo-index.html" class="btn btn-black">save</a>
+                    <button class="btn btn-black" id="save">save</button>
                     <!-- <button class="btn btn-black">save</button> -->
                 </div>
             </div>
         </section>
         <section class="right">
             <div class="input-wrap">
-                <input type="text" placeholder="DD" name="day">
+                <input type="text" placeholder="DD" name="day" id="day">
             </div> 
             <div class="input-wrap">
-                <input type="text" placeholder="MM" name="month">
+                <input type="text" placeholder="MM" name="month" id="month">
             </div>
             <div class="input-wrap">
-                <input type="text" placeholder="YY" name="year">
+                <input type="text" placeholder="YYYY" name="year" id="year">
             </div>
             <div class="btn-row" style="width: 400px; margin: 40px 0 0 60px;">
                 <button class="btn btn-white" id="reset">reset</button>
@@ -42,12 +45,12 @@
 
 
 <script>
-    document.getElementById("reset").onclick = function() {onResetClick()};
-    function onResetClick() {
-        let inputs = document.getElementsByTagName("input");
-        for (const input of inputs) {
-            input.value = '';
-        }
-    }
+    // document.getElementById("reset").onclick = function() {onResetClick()};
+    // function onResetClick() {
+    //     let inputs = document.getElementsByTagName("input");
+    //     for (const input of inputs) {
+    //         input.value = '';
+    //     }
+    // }
 </script>
 </html>
