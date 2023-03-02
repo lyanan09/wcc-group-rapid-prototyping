@@ -17,10 +17,11 @@ let connectionRamp = 6;
 let rotation = 0;
 
 let input, inputB,inputC;
-let button,buttonR, buttonSave;
+let button,buttonR, buttonSave, buttonTry;
 let greeting, greetingB, greetingC;
 
 let canvas;
+let isGenerated = false;
 
 function setup() {
 
@@ -42,6 +43,8 @@ function setup() {
   buttonR.mousePressed(resetTattoo);
   buttonSave = select('#save');
   buttonSave.mousePressed(saveTattoo);
+  buttonTry = select('#try');
+  // buttonTry.mousePressed(saveTattoo);
 
   textAlign(CENTER);
   textSize(20);
@@ -110,9 +113,27 @@ function drawLissajous() {
 }
 
 function draw() {
+  let data = input.value();
+  let data2 = inputB.value();
+  let data3 = inputC.value();
+
+  if(data && data2 && data3) {
+    button.removeAttribute('disabled');
+  } else {
+    button.attribute('disabled', '');
+  }
+
+  if(isGenerated) {
+    buttonSave.removeAttribute('disabled');
+    buttonTry.removeAttribute('disabled');
+  } else {
+    buttonSave.attribute('disabled', '');
+    buttonTry.attribute('disabled', '');
+  }
+
   drawTattoo();
   calculateLissajousPoints();
-  // drawLissajous();
+  drawLissajous();
 }
 
 function drawTattoo() {
@@ -182,10 +203,8 @@ function updateTattoo() {
     modFreqX = data3/1000/data;
     modFreqY = data3/1000/data;
   }
-
-
   
-  
+  isGenerated = true;
 }
 
 function resetTattoo() {
@@ -199,6 +218,7 @@ function resetTattoo() {
   input.value('');
   inputB.value('');
   inputC.value('');
+  isGenerated = false;
 }
 
 function saveTattoo() {
