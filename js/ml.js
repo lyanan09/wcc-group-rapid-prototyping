@@ -55,7 +55,7 @@ let sketch = function (p) {
   p.preload = function () {
     lipsimg = p.loadImage("Assets/lips.png");
     faceimg = p.loadImage("Assets/tattoo10.png");
-    eyeimg = p.loadImage("Assets/lips.png");
+    eyeimg = p.loadImage("Assets/tattoo06.png");
   };
 //  filter的范围，尽量与CSS中的canva和video的尺寸一致
   p.setup = function () {
@@ -151,7 +151,7 @@ p.detectEyes = function () {
   }
   // p.endShape();
   p.image(eyeimg, x - 190, y - 30);
-  eyeimg.resize(230, 120);
+  eyeimg.resize(260, 120);
 };
 
 };
