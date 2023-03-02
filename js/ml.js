@@ -39,6 +39,7 @@ let sketch = function (p) {
   };
 
   p.draw = function () {
+    
     p.clear();
 
     // detect lips
