@@ -131,7 +131,7 @@ if (detections != undefined && isFace) {
     }
   }
   // p.endShape();
-  p.image(faceimg, x -240, y - 220);
+  p.image(faceimg, x -220, y - 200);
   faceimg.resize(230, 120);
 };
 //3
