@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'carbon_blockregular';
+    src: url('../Assets/carbonbl-webfont.woff2') format('woff2'),
+         url('../Assets/carbonbl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -115,6 +123,9 @@ main{
 }
 
 .btn {
+    font-family: 'carbon_blockregular', serif;
+    font-weight:normal;
+    font-style:normal;
     text-transform: uppercase;
     border: none;
     border-radius: 20px;
@@ -125,8 +136,9 @@ main{
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 
 .btn:disabled {
@@ -146,10 +158,6 @@ main{
 #logo {
     max-width: 100%;
     max-height: 70%;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
 }
   
 #sketch-container{
@@ -288,6 +296,11 @@ canvas {
     background-image: url(../Assets/bg-info.jpg);
     padding: 120px 10px 50px 10px;
     box-sizing: border-box;
+    font-family: 'carbon_blockregular', serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 16px;
+    line-height: 1.2;
   }
 
   #info-main #home {
@@ -315,19 +328,14 @@ canvas {
   }
 
   .info-item img {
-    max-width: 140px;
-    max-height: 140px;
-    padding: 20px;
+    max-width: 50%;
+    padding: 30px;
     box-sizing: border-box;
   }
 
   .info-item .text-container {
-    width: 60%;
+    width: 50%;
     padding-right: 10px;
-  }
-
-  .info-line {
-    font-size: 12px;
   }
 
   .info-line label {
