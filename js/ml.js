@@ -55,7 +55,7 @@ let sketch = function (p) {
   p.preload = function () {
     lipsimg = p.loadImage("Assets/lips.png");
     faceimg = p.loadImage("Assets/tattoo10.png");
-    eyeimg = p.loadImage("Assets/lips.png");
+    eyeimg = p.loadImage("Assets/tattoo06.png");
   };
 //  filter的范围，尽量与CSS中的canva和video的尺寸一致
   p.setup = function () {
@@ -132,7 +132,7 @@ if (detections != undefined && isFace) {
     }
   }
   // p.endShape();
-  p.image(faceimg, x -240, y - 220);
+  p.image(faceimg, x -220, y - 200);
   faceimg.resize(230, 120);
 };
 //3
@@ -151,7 +151,7 @@ p.detectEyes = function () {
   }
   // p.endShape();
   p.image(eyeimg, x - 190, y - 30);
-  eyeimg.resize(230, 120);
+  eyeimg.resize(260, 120);
 };
 
 };
