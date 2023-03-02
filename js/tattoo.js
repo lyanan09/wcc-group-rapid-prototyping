@@ -7,7 +7,7 @@ let phi = 15;
 let modFreqX = 3;
 let modFreqY = 2;
 
-let lineWeight = 0.5;
+let lineWeight = 0.2;
 let lineColor;
 let lineAlpha = 50;
 
@@ -17,48 +17,35 @@ let connectionRamp = 6;
 let rotation = 0;
 
 let input, inputB,inputC;
-let button,buttonR;
+let button,buttonR, buttonSave;
 let greeting, greetingB, greetingC;
 
+let canvas;
+
 function setup() {
-  createCanvas(700, 700);
+
+  canvas = createCanvas(420, 420);
+  canvas.parent('#canvas-container');
 
   colorMode(RGB, 255, 255, 255, 100);
   noFill();
 
-  lineColor = color(0, 20);
+  lineColor = color(0, 10);
 
-  //
-  input = createInput();
-  input.position(20, 65);
-  
-   inputB = createInput();
-  inputB.position(20, 125);
-  
-  inputC = createInput();
-  inputC.position(20, 185);
+  input = select('#day');
+  inputB = select('#month');
+  inputC = select('#year');
 
-  button = createButton("submit");
-  button.position(input.x + input.width, 65);
-  // button.mousePressed(updateTattoo);
-
-  buttonR = createButton("reset");
-  buttonR.position(input.x + input.width + button.width, 65);
-
-  greeting = createElement("h2", "Day");
-  greeting.position(20, 5);
-  
-  greetingB = createElement("h2", "Month");
-  greetingB.position(20, 65);
-  
-   greetingC = createElement("h2", "Year");
-  greetingC.position(20, 125);
-
+  button = select('#submit');
+  button.mousePressed(updateTattoo);
+  buttonR = select('#reset');
+  buttonR.mousePressed(resetTattoo);
+  buttonSave = select('#save');
+  buttonSave.mousePressed(saveTattoo);
 
   textAlign(CENTER);
   textSize(20);
 
-  //
   calculateLissajousPoints();
   drawLissajous();
 }
@@ -123,14 +110,11 @@ function drawLissajous() {
 }
 
 function draw() {
-  button.mousePressed(updateTattoo);
-  buttonR.mousePressed(resetTattoo);
-  // button.mousePressed(drawTattoo);
   drawTattoo();
-  //updateTattoo();
   calculateLissajousPoints();
-  drawLissajous();
+  // drawLissajous();
 }
+
 function drawTattoo() {
   background(255);
   strokeWeight(lineWeight);
@@ -174,28 +158,32 @@ function updateTattoo() {
   let data = input.value();
   let data2 = inputB.value();
   let data3 = inputC.value();
-  
-  if (data < 16) {
-    freqX = data;
-    // modFreqX = data / 2;
-  } else if (data >=16) {
-    freqY = data / 2;
-    //modFreqY = data / 2;
-    //drawTattoo();  }
-}
-  
-  if(data2 <= 6){
-    // freqX = -data2 ;
-    // modFreqX = -data2 ;
-    phi = data2;
-  }else if (data2 > 6){
-    // freqY = -data2 ;
-    // modFreqY = -data2 ;
-    phi = -data2;
+
+  if( data && data2 && data3) {
+    if (data < 16) {
+      freqX = data;
+      // modFreqX = data / 2;
+    } else if (data >=16) {
+      freqY = data / 2;
+      //modFreqY = data / 2;
+      //drawTattoo();  }
   }
-  
-  modFreqX = data3/1000/data;
-  modFreqY = data3/1000/data;
+    
+    if(data2 <= 6){
+      // freqX = -data2 ;
+      // modFreqX = -data2 ;
+      phi = data2;
+    }else if (data2 > 6){
+      // freqY = -data2 ;
+      // modFreqY = -data2 ;
+      phi = -data2;
+    }
+    
+    modFreqX = data3/1000/data;
+    modFreqY = data3/1000/data;
+  }
+
+
   
   
 }
@@ -207,6 +195,15 @@ function resetTattoo() {
 
   modFreqX = 3;
   modFreqY = 2;
+
+  input.value('');
+  inputB.value('');
+  inputC.value('');
+}
+
+function saveTattoo() {
+  let filename = input.value() + "/" + inputB.value() + "/" + inputC.value();
+  saveCanvas(filename + ".png");
 }
 
 function keyPressed() {
