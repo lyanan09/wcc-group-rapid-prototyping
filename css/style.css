@@ -1,9 +1,150 @@
+@font-face {
+    font-family: 'carbon_blockregular';
+    src: url('../Assets/carbonbl-webfont.woff2') format('woff2'),
+         url('../Assets/carbonbl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-#logo {
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Times, serif;
+}
+
+main{
+    width: 100%;
+    height:100%; 
+    background-repeat: round;
+}
+
+#index-main {
+    background-image: url(../Assets/bg-main.jpg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#index-main a{
+    position: absolute;
+    scale: 0.75;
+}
+
+#index-main a#function-dreams {
+    top: 28%;
+    left: 6%;
+}
+
+#index-main a#daniel-wu {
+    top: 18%;
+    left: 50%;
+}
+
+#index-main a#ultraviolence {
+    top: 50%;
+    right: 8%;
+}
+
+#index-main a#morii {
+    bottom: 20%;
+    right: 10%;
+}
+
+#index-main a#nefelibata {
+    top: 38%;
+    right: 4%;
+}
+
+#index-main a#collapsar {
+    bottom: 26%;
+    left: 8%;
+}
+
+#index-main p {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.3,1);
+    -ms-transform: scale(1.3,1);
+    -webkit-transform: scale(1.3,1);
+}
+
+#modal {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal.hide {
+    display: none;
+}
+
+#modal .container {
+    width: 545px;
+    height: 622px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    background-color: rgb(212, 212, 237);
+    box-shadow: 0px 12px 14px 2px rgb(0 0 0 / 31%);
+}
+
+#modal .tatto-container {
+    width: 345px;
+    height: 345px;
+    background-color: white;
+    border: solid 2px black;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#modal .tatto-container img {
     max-width: 100%;
     max-height: 100%;
-    margin: auto;
 }
+
+#generate-main {
+    background-image: url(../Assets/bg.jpg);
+    display: flex;
+    padding: 0 60px 0 20px;
+    box-sizing: border-box;
+}
+
+.btn {
+    font-family: 'carbon_blockregular', serif;
+    font-weight:normal;
+    font-style:normal;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    width: 120px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+
   /* 展示摄像头获取范围，实际控制展示面部范围 */
   #video {
     object-fit: cover;
@@ -14,43 +155,257 @@
     height: 500px;
     z-index: 2;
   }
-  
-  #canvas {
-    position: absolute;
-    top: 45px;
-    margin: 16px;
-    width: 500px;
-    height: 500px;
-    z-index: 2;
-  }
-  /* 约束icon大小 */
-  .avatar {
+
+
+.btn.btn-white:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn.btn-black:not(:disabled) {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+}
+
+#logo {
+    max-width: 100%;
+    max-height: 70%;
+}
+
+#sketch-container{
+    width: 100%;
+    height: 100%;
+}
+
+#home {
+    scale: 0.75;
+    margin-top: 40px;
+}
+
+canvas {
+    display: block;
+}
+
+#generate-main section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    width: 570px;
+    height: 570px;
     border-radius: 20px;
-    border-color: black;
-    margin-top: 14px;
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    background-color: rgba(212, 212, 237, 0.9);
+    box-shadow: 0px 12px 14px 2px rgb(0 0 0 / 31%);
+}
+
+.img-container #canvas-container {
+    width: 420px;
+    height: 420px;
+    margin: 40px auto 30px auto;
+    background-color: white;
+    box-shadow: 0px 12px 14px 2px rgb(0 0 0 / 31%);
+}
+
+#generate-main .right {
+    flex-direction: column;
+}
+
+.input-wrap {
+    width: 422px;
+    height: 125px;
+    background-image: url(../Assets/input.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-wrap input {
+    border: none;
+    background: none;
+    font-size: 36px;
+    text-align: center;
+    width: 200px;
+    transform: scale(1.3,1);
+    -ms-transform: scale(1.3,1);
+    -webkit-transform: scale(1.3,1);
+    margin: 10px 0 0 40px;
+    color: #d4d4ed;
+    font-family: Times, serif;
+}
+
+.input-wrap input::placeholder {
+    color: #d4d4ed;
+    font-family: Times, serif;
+}
+
+.input-wrap input:focus-visible {
+    outline: none;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+  
+.info-container {
+    width: 100%;
+    position: fixed;
+    bottom: 200px;
+    right: 0;
+    max-width: 400px;
   }
   
-  .filter {
-    box-shadow: 2px 2px 3px rgb(0, 0, 0);
-    margin-top: 5px;
-    vertical-align: middle;
-    /* 圆button大小 */
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: rgb(0, 0, 0);
-    margin-left: 500px;
-    cursor: pointer;
-  }
+  .info-container img {
+    scale:0.75;
+    animation-name: bounce;
+    animation-duration : 5s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
   
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 85vh;
   }
   
   
+  @keyframes bounce {
+    
+    from{
+        margin-top:0%;
+        margin-left: 0%;
+    }
+    30%{
+        margin-top:0%;
+        margin-left: 100%;
+  
+    }
+  
+    60%{
+        margin-top:100%;
+        margin-left: 0%;
+  
+    }
+  
+    80%
+    {
+        margin-top:100%;
+        margin-left: 100%;
+    }
+  
+    to{
+        margin-top:0%;
+        margin-left: 0%;
+    }
+  }
+
+  #info-main {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(../Assets/bg-info.jpg);
+    padding: 120px 10px 50px 10px;
+    box-sizing: border-box;
+    font-family: 'carbon_blockregular', serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  #info-main #home {
+    position: fixed;
+  }
+
+  .info-item {
+    display: flex;
+    width: calc(100% / 3);
+    box-sizing: border-box;
+    padding: 0 50px;
+    text-transform: uppercase;
+  }
+
+  .info-wrapper {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 0;
+    padding: 35% 0;
+    box-shadow: 0px 12px 14px 2px rgb(0 0 0 / 31%);
+  }
+
+  .info-item img {
+    max-width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .info-item .text-container {
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  .info-line label {
+    color: white;
+  }
+
+  .info-line p {
+    max-width: 100%;
+    word-break: break-all;
+    margin: 0;
+  }
+
+  /*---------   ml-main styles *--------/
+    /* 展示摄像头获取范围，实际控制展示面部范围 */
+    #video {
+        object-fit: cover;
+        position: absolute;
+        top: 0.1px;
+        /* margin: 16px; */
+        width: 500px;
+        height: 500px;
+        z-index: 2;
+      }
+      
+      #canvas {
+        position: absolute;
+        top: 45px;
+        margin: 16px;
+        width: 500px;
+        height: 500px;
+        z-index: 2;
+      }
+      /* 约束icon大小 */
+      .avatar {
+        border-radius: 20px;
+        border-color: black;
+        margin-top: 14px;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      
+      .filter {
+        box-shadow: 2px 2px 3px rgb(0, 0, 0);
+        margin-top: 5px;
+        vertical-align: middle;
+        /* 圆button大小 */
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgb(0, 0, 0);
+        margin-left: 500px;
+        cursor: pointer;
+      }
+      
+      .scroll {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 85vh;
+      }
+      

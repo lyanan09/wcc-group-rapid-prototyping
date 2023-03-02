@@ -4,13 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fanzy Tattoo</title>
+    <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
-
-        <img src="assets/logo.png" alt="" id="logo">
+    <main id="index-main">
+        <img src="Assets/Logo.png" alt="" id="logo">
+        <p>“Choose one style for your tattoo”</p>
+        <a href="#" id="function-dreams">
+            <img src="Assets/Function-Dreams.png" alt="">
+        </a>
+        <a href="generate.html" id="daniel-wu">
+            <img src="Assets/Daniel-Wu.png" alt="">
+        </a>
+        <a href="generate.html" id="ultraviolence">
+            <img src="Assets/Ultraviolence.png" alt="">
+        </a>
+        <a href="generate.html" id="morii">
+            <img src="Assets/Morii.png" alt="">
+        </a>
+        <a href="generate.html" id="nefelibata">
+            <img src="Assets/Nefelibata.png" alt="">
+        </a>
+        <a href="generate.html" id="collapsar">
+            <img src="Assets/Collapsar.png" alt="">
+        </a>
+        <div class="info-container">
+            <a href="info.html">
+                <img src="Assets/info.png" alt="" style="width:100%" >
+            </a>
+        </div>
     </main>
+    <div id="modal" class="hide">
+        <div class="container">
+            <img src="Assets/Function-Dreams.png" alt="">
+            <div class="tatto-container">
+                <img src="Assets/lips.png" alt="">
+            </div>
+            <a href="generate.html" class="btn btn-black">next</a>
+        </div>
+    </div>
 </body>
+
+<script>
+    document.getElementById("function-dreams").onclick = function() {onFunctionDreamsClick()};
+    function onFunctionDreamsClick() {
+        let element = document.getElementById("modal");
+        element.classList.toggle("hide");
+    }
+</script>
 </html>
