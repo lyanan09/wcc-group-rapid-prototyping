@@ -29,7 +29,7 @@ main{
     align-items: center;
 }
 
-#index-main a{
+#index-main > a{
     position: absolute;
     scale: 0.75;
 }
@@ -243,13 +243,13 @@ canvas {
 .info-container {
     width: 100%;
     position: fixed;
-    bottom: 200px;
-    right: 0;
-    max-width: 400px;
+    top: 0;
+    left: 0;
   }
   
   .info-container img {
-    scale:0.75;
+    /* scale:0.75; */
+    width: 135px;
     animation-name: bounce;
     animation-duration : 5s;
     animation-iteration-count:infinite;
@@ -264,20 +264,20 @@ canvas {
     }
     30%{
         margin-top:0%;
-        margin-left: 100%;
+        margin-left: calc(100% - 135px);
   
     }
   
     60%{
-        margin-top:100%;
+        margin-top: calc(100% - 135px);
         margin-left: 0%;
   
     }
   
     80%
     {
-        margin-top:100%;
-        margin-left: 100%;
+        margin-top: calc(100% - 135px);
+        margin-left: calc(100% - 135px);
     }
   
     to{
