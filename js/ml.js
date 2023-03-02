@@ -78,7 +78,7 @@ let sketch = function (p) {
     }
 
     
-  };
+  
 // detect face
 if (detections != undefined && isFace) {
   if (
