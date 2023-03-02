@@ -61,6 +61,7 @@ let sketch = function (p) {
   p.setup = function () {
     canvas = p.createCanvas(500, 500);
     canvas.id("canvas");
+    canvas.parent('#cnv-vid-container');
   };
 
   p.draw = function () {
