@@ -54,8 +54,8 @@ let sketch = function (p) {
 
   p.preload = function () {
     lipsimg = p.loadImage("Assets/lips.png");
-    faceimg = p.loadImage("assets/tattoo10.png");
-    eyeimg = p.loadImage("assets/lips.png");
+    faceimg = p.loadImage("Assets/tattoo10.png");
+    eyeimg = p.loadImage("Assets/lips.png");
   };
 //  filter的范围，尽量与CSS中的canva和video的尺寸一致
   p.setup = function () {
