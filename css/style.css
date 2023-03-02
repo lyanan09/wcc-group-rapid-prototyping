@@ -145,18 +145,6 @@ main{
     cursor: not-allowed;
 }
 
-  /* 展示摄像头获取范围，实际控制展示面部范围 */
-  #video {
-    object-fit: cover;
-    position: absolute;
-    top: 0.1px;
-    /* margin: 16px; */
-    width: 500px;
-    height: 500px;
-    z-index: 2;
-  }
-
-
 .btn.btn-white:not(:disabled) {
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -251,7 +239,6 @@ canvas {
     justify-content: space-around;
     width: 100%;
 }
-
   
 .info-container {
     width: 100%;
@@ -267,9 +254,7 @@ canvas {
     animation-duration : 5s;
     animation-iteration-count:infinite;
     animation-direction: alternate;
-  
   }
-  
   
   @keyframes bounce {
     
@@ -299,6 +284,32 @@ canvas {
         margin-top:0%;
         margin-left: 0%;
     }
+  }
+
+  #ml-main {
+    background-image: url(../Assets/bg-info.jpg);
+  }
+
+  #ml-main .container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #ml-main .smartphone {
+    width: 545px;
+    height: 622px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    background-color: rgb(212, 212, 237);
+    box-shadow: 0px 12px 14px 2px rgb(0 0 0 / 31%);
   }
 
   #info-main {
@@ -362,13 +373,8 @@ canvas {
   /*---------   ml-main styles *--------/
     /* 展示摄像头获取范围，实际控制展示面部范围 */
     #video {
-        object-fit: cover;
-        position: absolute;
-        top: 0.1px;
-        /* margin: 16px; */
-        width: 500px;
-        height: 500px;
-        z-index: 2;
+        width: 100%;
+        height: 100%;
       }
       
       #canvas {
