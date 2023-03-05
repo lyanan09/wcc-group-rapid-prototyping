@@ -1,3 +1,14 @@
+// REFERENCE 
+// M_2_5_01
+//
+// Generative Gestaltung – Creative Coding im Web
+// ISBN: 978-3-87439-902-9, First Edition, Hermann Schmidt, Mainz, 2018
+// Benedikt Groß, Hartmut Bohnacker, Julia Laub, Claudius Lazzeroni
+// with contributions by Joey Lee and Niels Poldervaart
+// Copyright 2018
+//
+// http://www.generative-gestaltung.de
+
 let pointCount = 500;
 let lissajousPoints = [];
 let freqX = 4;
@@ -44,7 +55,6 @@ function setup() {
   buttonSave = select('#save');
   buttonSave.mousePressed(saveTattoo);
   buttonTry = select('#try');
-  // buttonTry.mousePressed(saveTattoo);
 
   textAlign(CENTER);
   textSize(20);
@@ -57,15 +67,11 @@ function calculateLissajousPoints() {
   for (let i = 0; i <= pointCount; i++) {
     let angle = map(i, 0, pointCount, 0, TAU);
 
-    // let x = p.sin(angle * freqX + p.radians(phi)) * p.cos(angle * modFreqX);
-    // let y = p.sin(angle * freqY - p.radians(phi)) * p.cos(angle * modFreqY);
     let x =
       sin(angle * freqX + radians(phi)) *
       tan(angle * modFreqX) *
       cos(angle * modFreqX);
     let y = sin(angle * freqY - radians(phi)) * tan(angle * modFreqY);
-    // let x = p.tan(angle * freqX + p.radians(phi)) * p.sin(angle * modFreqX);
-    //  let y = p.tan(angle * freqY - p.radians(phi)) * p.sin(angle * modFreqY);
     x *= width / 2 - 30;
     y *= height / 2 - 30;
 
@@ -88,23 +94,8 @@ function drawLissajous() {
       if (d <= connectionRadius) {
         stroke(lineColor, a * lineAlpha);
 
-        // p.line(
-        //   lissajousPoints[i1].x,
-        //   lissajousPoints[i1].y,
-        //   lissajousPoints[i2].x,
-        //   lissajousPoints[i2].y
-        // );
-
-        //  p.vertex(lissajousPoints[i1].x,
-        //   lissajousPoints[i2].y);
-        // p.vertex(lissajousPoints[i2].x,
-        //   lissajousPoints[i1].y);
-
         vertex(lissajousPoints[i1].x, lissajousPoints[i1].y);
         vertex(lissajousPoints[i2].x, lissajousPoints[i2].y);
-
-        // p.ellipse(lissajousPoints[i1].x,
-        //   lissajousPoints[i2].y,a*10);
       }
     }
   }
@@ -151,23 +142,8 @@ function drawTattoo() {
       if (d <= connectionRadius) {
         stroke(lineColor, a * lineAlpha);
 
-        // p.line(
-        //   lissajousPoints[i1].x,
-        //   lissajousPoints[i1].y,
-        //   lissajousPoints[i2].x,
-        //   lissajousPoints[i2].y
-        // );
-
-        //  p.vertex(lissajousPoints[i1].x,
-        //   lissajousPoints[i2].y);
-        // p.vertex(lissajousPoints[i2].x,
-        //   lissajousPoints[i1].y);
-
         vertex(lissajousPoints[i1].x, lissajousPoints[i1].y);
         vertex(lissajousPoints[i2].x, lissajousPoints[i2].y);
-
-        // p.ellipse(lissajousPoints[i1].x,
-        //   lissajousPoints[i2].y,a*10);
       }
     }
   }
@@ -183,20 +159,13 @@ function updateTattoo() {
   if( data && data2 && data3) {
     if (data < 16) {
       freqX = data;
-      // modFreqX = data / 2;
     } else if (data >=16) {
       freqY = data / 2;
-      //modFreqY = data / 2;
-      //drawTattoo();  }
   }
     
     if(data2 <= 6){
-      // freqX = -data2 ;
-      // modFreqX = -data2 ;
       phi = data2;
     }else if (data2 > 6){
-      // freqY = -data2 ;
-      // modFreqY = -data2 ;
       phi = -data2;
     }
     
@@ -227,33 +196,7 @@ function saveTattoo() {
 }
 
 function keyPressed() {
-  // if (p.key == 's' || p.key == 'S') p.saveCanvas(gd.timestamp(), 'png');
   if (key == "s" || key == "S") saveCanvas("png");
-
-  //     if (key == '1') freqX--;
-  //     if (key == '2') freqX++;
-  //     freqX = max(freqX,1);
-
-  //     if (key == '3') freqY--;
-  //     if (key == '4') freqY++;
-  //     freqY = max(freqY,1);
-
-  //     if (keyCode == LEFT_ARROW) phi -= 15;
-  //     if (keyCode == RIGHT_ARROW) phi += 15;
-
-  //     if (keyCode == UP_ARROW) rotation -= 1;
-  //     if (keyCode == DOWN_ARROW) rotation += 1;
-
-  //     if (key == '7') modFreqX--;
-  //     if (key == '8') modFreqX++;
-  //     modFreqX = max(modFreqX,1);
-
-  //     if (key == '9') modFreqY--;
-  //     if (key == '0') modFreqY++;
-  //     modFreqY = max(modFreqY,1);
-
-  // calculateLissajousPoints();
-  // drawLissajous();
 
   console.log(
     "freqX: " +

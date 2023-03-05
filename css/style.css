@@ -1,3 +1,7 @@
+/*
+    Edited by Yanan Liu, Zidian Pan, Xueyi Huang, Yunxian Wang
+*/
+
 @font-face {
     font-family: 'carbon_blockregular';
     src: url('../Assets/carbonbl-webfont.woff2') format('woff2'),
@@ -295,7 +299,6 @@ canvas {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
   }
@@ -370,8 +373,7 @@ canvas {
     margin: 0;
   }
 
-  /*---------   ml-main styles *--------/
-    /* 展示摄像头获取范围，实际控制展示面部范围 */
+  /*---------   ml-main styles -------- */
     #video {
         width: 420px;
         height: 420px;
@@ -392,7 +394,6 @@ canvas {
         max-height: 100%;
         z-index: 2;
       }
-      /* 约束icon大小 */
       .avatar {
         border-radius: 20px;
         border-color: black;

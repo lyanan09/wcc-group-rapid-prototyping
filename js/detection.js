@@ -3,7 +3,6 @@ const videoElement = document.getElementById("video");
 
 function gotFaces(results) {
   detections = results;
-  // console.log(detections);
 }
 
 const faceMesh = new FaceMesh({

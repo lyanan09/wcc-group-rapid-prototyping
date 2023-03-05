@@ -57,7 +57,6 @@ let sketch = function (p) {
     faceimg = p.loadImage("Assets/tattoo10.png");
     eyeimg = p.loadImage("Assets/tattoo06.png");
   };
-//  filter的范围，尽量与CSS中的canva和video的尺寸一致
   p.setup = function () {
     canvas = p.createCanvas(500, 500);
     canvas.id("canvas");
@@ -103,17 +102,12 @@ if (detections != undefined && isFace) {
   // detect lips
   p.detectLips = function () {
     let x, y;
-    // p.stroke(255, 0, 0);
-    // p.strokeWeight(3);
-    // p.beginShape(p.POINTS);
     for (let i = 0; i < lips.length; i++) {
       for (let j = 0; j < detections.multiFaceLandmarks[0].length; j++) {
         x = detections.multiFaceLandmarks[0][lips[i]].x * p.width;
         y = detections.multiFaceLandmarks[0][lips[i]].y * p.height;
-        // p.vertex(x, y);
       }
     }
-    // p.endShape();
     p.image(lipsimg, x -110, y -220);
     lipsimg.resize(220, 120);
   };
@@ -121,35 +115,23 @@ if (detections != undefined && isFace) {
  //2
  p.detectface = function () {
   let x, y;
-  // p.stroke(0, 255, 0);
-  // p.strokeWeight(5);
-  // p.beginShape(p.POINTS);
   for (let i = 0; i < face.length; i++) {
     for (let j = 0; j < detections.multiFaceLandmarks[0].length; j++) {
       x = detections.multiFaceLandmarks[0][face[i]].x * p.width;
       y = detections.multiFaceLandmarks[0][face[i]].y * p.height;
-      // p.vertex(x, y);
     }
   }
-  // p.endShape();
   p.image(faceimg, x -220, y - 200);
   faceimg.resize(230, 120);
 };
-//3
-// detect eyes
 p.detectEyes = function () {
   let x, y;
-  // p.stroke(0, 255, 0);
-  // p.strokeWeight(5);
-  // p.beginShape(p.POINTS);
   for (let i = 0; i < eyes.length; i++) {
     for (let j = 0; j < detections.multiFaceLandmarks[0].length; j++) {
       x = detections.multiFaceLandmarks[0][eyes[i]].x * p.width;
       y = detections.multiFaceLandmarks[0][eyes[i]].y * p.height;
-      // p.vertex(x, y);
     }
   }
-  // p.endShape();
   p.image(eyeimg, x - 190, y - 30);
   eyeimg.resize(260, 120);
 };
