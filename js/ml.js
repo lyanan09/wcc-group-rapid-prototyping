@@ -1,4 +1,6 @@
-// p5.js
+// REFERENCE 
+//Himanshu Tripathi, Face filter project using mediapipe and p5.js,12/12/2021https://github.com/iamhimanshu0/face-filter
+
 let isShows = false;
 let isLips = false;
 let lipsimg, faceimg, eyeimg;

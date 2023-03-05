@@ -48,8 +48,10 @@
 </body>
 
 <script>
-    //Click on the button to display the modal
-    document.getElementById("function-dreams").onclick = function() {onFunctionDreamsClick()};
+    // Display the modal when clicking the button
+    document.getElementById("function-dreams").onclick = function() {
+        onFunctionDreamsClick()
+    };
     function onFunctionDreamsClick() {
         let element = document.getElementById("modal");
         element.classList.toggle("hide");
